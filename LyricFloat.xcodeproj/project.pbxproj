@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		200000000000000000000001 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* AppModel.swift */; };
+		200000000000000000000002 /* LyricFloatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* LyricFloatApp.swift */; };
+		200000000000000000000003 /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* AppPreferences.swift */; };
+		200000000000000000000004 /* LyricsDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* LyricsDocument.swift */; };
+		200000000000000000000005 /* PlaybackSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* PlaybackSnapshot.swift */; };
+		200000000000000000000006 /* AppleMusicSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* AppleMusicSource.swift */; };
+		200000000000000000000007 /* LRCLIBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* LRCLIBClient.swift */; };
+		200000000000000000000008 /* LaunchAtLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* LaunchAtLoginController.swift */; };
+		200000000000000000000009 /* LyricsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000009 /* LyricsRepository.swift */; };
+		20000000000000000000000A /* MediaSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000A /* MediaSource.swift */; };
+		20000000000000000000000B /* JSONFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000B /* JSONFileStore.swift */; };
+		20000000000000000000000C /* LRCParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000C /* LRCParser.swift */; };
+		20000000000000000000000D /* Loggers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000D /* Loggers.swift */; };
+		20000000000000000000000E /* LyricsOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000E /* LyricsOverlayView.swift */; };
+		20000000000000000000000F /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000F /* MenuBarView.swift */; };
+		200000000000000000000010 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* SettingsView.swift */; };
+		200000000000000000000011 /* OverlayPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000011 /* OverlayPanelController.swift */; };
+		200000000000000000000012 /* LyricsCandidateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000012 /* LyricsCandidateSelectionView.swift */; };
+		210000000000000000000001 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110000000000000000000001 /* AppKit.framework */; };
+		210000000000000000000002 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110000000000000000000002 /* ScriptingBridge.framework */; };
+		210000000000000000000003 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110000000000000000000003 /* ServiceManagement.framework */; };
+		220000000000000000000001 /* LyricFloat.icns in Resources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000003 /* LyricFloat.icns */; };
+		400000000000000000000001 /* LRCParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300000000000000000000001 /* LRCParserTests.swift */; };
+		400000000000000000000002 /* PlaybackPositionInterpolatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300000000000000000000002 /* PlaybackPositionInterpolatorTests.swift */; };
+		400000000000000000000003 /* LyricsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300000000000000000000003 /* LyricsRepositoryTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		800000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000000000000000000010;
+			remoteInfo = LyricFloat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		100000000000000000000001 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/App/AppModel.swift; sourceTree = "<group>"; };
+		100000000000000000000002 /* LyricFloatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/App/LyricFloatApp.swift; sourceTree = "<group>"; };
+		100000000000000000000003 /* AppPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Models/AppPreferences.swift; sourceTree = "<group>"; };
+		100000000000000000000004 /* LyricsDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Models/LyricsDocument.swift; sourceTree = "<group>"; };
+		100000000000000000000005 /* PlaybackSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Models/PlaybackSnapshot.swift; sourceTree = "<group>"; };
+		100000000000000000000006 /* AppleMusicSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Services/AppleMusicSource.swift; sourceTree = "<group>"; };
+		100000000000000000000007 /* LRCLIBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Services/LRCLIBClient.swift; sourceTree = "<group>"; };
+		100000000000000000000008 /* LaunchAtLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Services/LaunchAtLoginController.swift; sourceTree = "<group>"; };
+		100000000000000000000009 /* LyricsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Services/LyricsRepository.swift; sourceTree = "<group>"; };
+		10000000000000000000000A /* MediaSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Services/MediaSource.swift; sourceTree = "<group>"; };
+		10000000000000000000000B /* JSONFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Stores/JSONFileStore.swift; sourceTree = "<group>"; };
+		10000000000000000000000C /* LRCParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Support/LRCParser.swift; sourceTree = "<group>"; };
+		10000000000000000000000D /* Loggers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Support/Loggers.swift; sourceTree = "<group>"; };
+		10000000000000000000000E /* LyricsOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Views/LyricsOverlayView.swift; sourceTree = "<group>"; };
+		10000000000000000000000F /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Views/MenuBarView.swift; sourceTree = "<group>"; };
+		100000000000000000000010 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Views/SettingsView.swift; sourceTree = "<group>"; };
+		100000000000000000000011 /* OverlayPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Windowing/OverlayPanelController.swift; sourceTree = "<group>"; };
+		100000000000000000000012 /* LyricsCandidateSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Views/LyricsCandidateSelectionView.swift; sourceTree = "<group>"; };
+		110000000000000000000001 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		110000000000000000000002 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		110000000000000000000003 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		120000000000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Resources/Info.plist; sourceTree = "<group>"; };
+		120000000000000000000002 /* LyricFloat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resources/LyricFloat.entitlements; sourceTree = "<group>"; };
+		120000000000000000000003 /* LyricFloat.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Resources/LyricFloat.icns; sourceTree = "<group>"; };
+		300000000000000000000001 /* LRCParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests/LyricFloatTests/LRCParserTests.swift; sourceTree = "<group>"; };
+		300000000000000000000002 /* PlaybackPositionInterpolatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests/LyricFloatTests/PlaybackPositionInterpolatorTests.swift; sourceTree = "<group>"; };
+		300000000000000000000003 /* LyricsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests/LyricFloatTests/LyricsRepositoryTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000001 /* LyricFloat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LyricFloat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00000000000000000000002 /* LyricFloatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyricFloatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		500000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				210000000000000000000001 /* AppKit.framework in Frameworks */,
+				210000000000000000000002 /* ScriptingBridge.framework in Frameworks */,
+				210000000000000000000003 /* ServiceManagement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		500000000000000000000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000004 /* Sources */,
+				000000000000000000000005 /* Tests */,
+				000000000000000000000007 /* Resources */,
+				000000000000000000000006 /* Frameworks */,
+				000000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		000000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000001 /* LyricFloat.app */,
+				F00000000000000000000002 /* LyricFloatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		000000000000000000000004 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000001 /* AppModel.swift */,
+				100000000000000000000002 /* LyricFloatApp.swift */,
+				100000000000000000000003 /* AppPreferences.swift */,
+				100000000000000000000004 /* LyricsDocument.swift */,
+				100000000000000000000005 /* PlaybackSnapshot.swift */,
+				100000000000000000000006 /* AppleMusicSource.swift */,
+				100000000000000000000007 /* LRCLIBClient.swift */,
+				100000000000000000000008 /* LaunchAtLoginController.swift */,
+				100000000000000000000009 /* LyricsRepository.swift */,
+				10000000000000000000000A /* MediaSource.swift */,
+				10000000000000000000000B /* JSONFileStore.swift */,
+				10000000000000000000000C /* LRCParser.swift */,
+				10000000000000000000000D /* Loggers.swift */,
+				10000000000000000000000E /* LyricsOverlayView.swift */,
+				10000000000000000000000F /* MenuBarView.swift */,
+				100000000000000000000010 /* SettingsView.swift */,
+				100000000000000000000011 /* OverlayPanelController.swift */,
+				100000000000000000000012 /* LyricsCandidateSelectionView.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		000000000000000000000005 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				300000000000000000000001 /* LRCParserTests.swift */,
+				300000000000000000000002 /* PlaybackPositionInterpolatorTests.swift */,
+				300000000000000000000003 /* LyricsRepositoryTests.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		000000000000000000000006 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				110000000000000000000001 /* AppKit.framework */,
+				110000000000000000000002 /* ScriptingBridge.framework */,
+				110000000000000000000003 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		000000000000000000000007 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				120000000000000000000001 /* Info.plist */,
+				120000000000000000000002 /* LyricFloat.entitlements */,
+				120000000000000000000003 /* LyricFloat.icns */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000000000000000000000010 /* LyricFloat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 700000000000000000000002 /* Build configuration list for PBXNativeTarget "LyricFloat" */;
+			buildPhases = (
+				500000000000000000000001 /* Sources */,
+				500000000000000000000002 /* Frameworks */,
+				500000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LyricFloat;
+			productName = LyricFloat;
+			productReference = F00000000000000000000001 /* LyricFloat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		000000000000000000000011 /* LyricFloatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 700000000000000000000003 /* Build configuration list for PBXNativeTarget "LyricFloatTests" */;
+			buildPhases = (
+				500000000000000000000004 /* Sources */,
+				500000000000000000000005 /* Frameworks */,
+				500000000000000000000006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				800000000000000000000002 /* PBXTargetDependency */,
+			);
+			name = LyricFloatTests;
+			productName = LyricFloatTests;
+			productReference = F00000000000000000000002 /* LyricFloatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		000000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					000000000000000000000010 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					000000000000000000000011 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 000000000000000000000010;
+					};
+				};
+			};
+			buildConfigurationList = 700000000000000000000001 /* Build configuration list for PBXProject "LyricFloat" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 000000000000000000000002;
+			productRefGroup = 000000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				000000000000000000000010 /* LyricFloat */,
+				000000000000000000000011 /* LyricFloatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		500000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				220000000000000000000001 /* LyricFloat.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		500000000000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		500000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				200000000000000000000001 /* AppModel.swift in Sources */,
+				200000000000000000000002 /* LyricFloatApp.swift in Sources */,
+				200000000000000000000003 /* AppPreferences.swift in Sources */,
+				200000000000000000000004 /* LyricsDocument.swift in Sources */,
+				200000000000000000000005 /* PlaybackSnapshot.swift in Sources */,
+				200000000000000000000006 /* AppleMusicSource.swift in Sources */,
+				200000000000000000000007 /* LRCLIBClient.swift in Sources */,
+				200000000000000000000008 /* LaunchAtLoginController.swift in Sources */,
+				200000000000000000000009 /* LyricsRepository.swift in Sources */,
+				20000000000000000000000A /* MediaSource.swift in Sources */,
+				20000000000000000000000B /* JSONFileStore.swift in Sources */,
+				20000000000000000000000C /* LRCParser.swift in Sources */,
+				20000000000000000000000D /* Loggers.swift in Sources */,
+				20000000000000000000000E /* LyricsOverlayView.swift in Sources */,
+				20000000000000000000000F /* MenuBarView.swift in Sources */,
+				200000000000000000000010 /* SettingsView.swift in Sources */,
+				200000000000000000000011 /* OverlayPanelController.swift in Sources */,
+				200000000000000000000012 /* LyricsCandidateSelectionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		500000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				400000000000000000000001 /* LRCParserTests.swift in Sources */,
+				400000000000000000000002 /* PlaybackPositionInterpolatorTests.swift in Sources */,
+				400000000000000000000003 /* LyricsRepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		800000000000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000000000000000000000010 /* LyricFloat */;
+			targetProxy = 800000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		600000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		600000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		600000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Resources/LyricFloat.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trivia.LyricFloat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		600000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Resources/LyricFloat.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trivia.LyricFloat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		600000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trivia.LyricFloatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LyricFloat.app/Contents/MacOS/LyricFloat";
+			};
+			name = Debug;
+		};
+		600000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trivia.LyricFloatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LyricFloat.app/Contents/MacOS/LyricFloat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		700000000000000000000001 /* Build configuration list for PBXProject "LyricFloat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				600000000000000000000001 /* Debug */,
+				600000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		700000000000000000000002 /* Build configuration list for PBXNativeTarget "LyricFloat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				600000000000000000000003 /* Debug */,
+				600000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		700000000000000000000003 /* Build configuration list for PBXNativeTarget "LyricFloatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				600000000000000000000005 /* Debug */,
+				600000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 000000000000000000000001 /* Project object */;
+}
