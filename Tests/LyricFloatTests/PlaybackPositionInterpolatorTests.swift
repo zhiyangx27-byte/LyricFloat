@@ -207,6 +207,64 @@ final class PlaybackPositionInterpolatorTests: XCTestCase {
         XCTAssertEqual(defaults.string(forKey: "fontFamily"), LyricsFontCatalog.systemFamily)
     }
 
+    func testEnglishAndChineseLocalizationCatalogsHaveMatchingKeys() throws {
+        let english = try localizationTable(language: "en", name: "Localizable")
+        let chinese = try localizationTable(language: "zh-Hans", name: "Localizable")
+
+        XCTAssertEqual(Set(english.keys), Set(chinese.keys))
+        XCTAssertGreaterThanOrEqual(english.count, 100)
+        XCTAssertFalse(english.values.contains(where: { $0.isEmpty }))
+        XCTAssertFalse(chinese.values.contains(where: { $0.isEmpty }))
+    }
+
+    func testEnglishLocalizationCoversCoreWorkflow() throws {
+        let english = try localizationTable(language: "en", name: "Localizable")
+        let requiredKeys = [
+            "显示悬浮歌词",
+            "隐藏悬浮歌词",
+            "歌词字体",
+            "选择歌词版本…",
+            "清除手动选择",
+            "导入当前歌曲 LRC…",
+            "移回显示器中央",
+            "未找到歌词，可从菜单选择歌词版本"
+        ]
+
+        for key in requiredKeys {
+            let translation = try XCTUnwrap(english[key], "Missing English translation for \(key)")
+            XCTAssertNotEqual(translation, key)
+        }
+    }
+
+    func testAutomationPermissionDescriptionIsLocalized() throws {
+        let english = try localizationTable(language: "en", name: "InfoPlist")
+        let chinese = try localizationTable(language: "zh-Hans", name: "InfoPlist")
+        let key = "NSAppleEventsUsageDescription"
+
+        XCTAssertEqual(
+            english[key],
+            "LyricFloat needs access to Apple Music to display synchronized lyrics."
+        )
+        XCTAssertEqual(
+            chinese[key],
+            "LyricFloat 需要访问 Apple Music 以同步显示当前歌曲歌词。"
+        )
+    }
+
+    private func localizationTable(language: String, name: String) throws -> [String: String] {
+        let projectRoot = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+        let fileURL = projectRoot
+            .appendingPathComponent("Resources")
+            .appendingPathComponent("\(language).lproj")
+            .appendingPathComponent("\(name).strings")
+        let data = try Data(contentsOf: fileURL)
+        let value = try PropertyListSerialization.propertyList(from: data, format: nil)
+        return try XCTUnwrap(value as? [String: String])
+    }
+
     private func snapshot(
         state: PlaybackState,
         position: TimeInterval,

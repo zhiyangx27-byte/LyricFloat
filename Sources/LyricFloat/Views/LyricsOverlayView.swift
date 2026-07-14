@@ -13,17 +13,17 @@ struct LyricsOverlayView: View {
 
             Group {
                 if let lyrics = model.lyrics, lyrics.instrumental {
-                    statusText("纯音乐")
+                    statusText(L10n.text("纯音乐"))
                 } else if let lyrics = model.lyrics, lyrics.isSynced {
                     syncedLyrics(lyrics, preferences: model.preferences)
                 } else if let plainLyrics = model.lyrics?.plainLyrics, !plainLyrics.isEmpty {
                     plainLyricsView(plainLyrics, preferences: model.preferences)
                 } else if let snapshot = model.snapshot, model.isLoadingLyrics {
-                    statusText("正在查找《\(snapshot.title)》的歌词…")
+                    statusText(L10n.format("正在查找《%@》的歌词…", snapshot.title))
                 } else if model.snapshot != nil {
-                    statusText("未找到歌词，可从菜单选择歌词版本")
+                    statusText(L10n.text("未找到歌词，可从菜单选择歌词版本"))
                 } else {
-                    statusText("在 Apple Music 中播放一首歌曲")
+                    statusText(L10n.text("在 Apple Music 中播放一首歌曲"))
                 }
             }
             .padding(.horizontal, 36)

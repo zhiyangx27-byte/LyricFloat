@@ -96,6 +96,10 @@ build_with_swiftpm() {
   cp "$binary_directory/$APP_NAME" "$contents/MacOS/$APP_NAME"
   cp "$ROOT_DIR/Resources/Info.plist" "$contents/Info.plist"
   cp "$ROOT_DIR/Resources/LyricFloat.icns" "$contents/Resources/LyricFloat.icns"
+  for localization_dir in "$ROOT_DIR"/Resources/*.lproj; do
+    [[ -d "$localization_dir" ]] || continue
+    ditto "$localization_dir" "$contents/Resources/$(basename "$localization_dir")"
+  done
   /usr/libexec/PlistBuddy -c "Set :CFBundleExecutable $APP_NAME" "$contents/Info.plist"
   /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $BUNDLE_ID" "$contents/Info.plist"
   /usr/libexec/PlistBuddy -c "Set :CFBundleName $APP_NAME" "$contents/Info.plist"

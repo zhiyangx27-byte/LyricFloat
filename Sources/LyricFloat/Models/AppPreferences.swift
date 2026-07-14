@@ -20,9 +20,9 @@ enum LyricsTextAlignment: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .leading: "左对齐"
-        case .center: "居中"
-        case .trailing: "右对齐"
+        case .leading: L10n.text("左对齐")
+        case .center: L10n.text("居中")
+        case .trailing: L10n.text("右对齐")
         }
     }
 }
@@ -35,8 +35,8 @@ enum LyricsDisplayMode: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .currentLine: "仅当前句"
-        case .surroundingLines: "当前句与前后句"
+        case .currentLine: L10n.text("仅当前句")
+        case .surroundingLines: L10n.text("当前句与前后句")
         }
     }
 }
@@ -64,15 +64,15 @@ enum LyricsColorPreset: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .white: "纯白"
-        case .warmWhite: "暖白"
-        case .yellow: "亮黄"
-        case .orange: "橙色"
-        case .coral: "珊瑚红"
-        case .pink: "粉色"
-        case .violet: "紫色"
-        case .cyan: "青蓝"
-        case .mint: "薄荷绿"
+        case .white: L10n.text("纯白")
+        case .warmWhite: L10n.text("暖白")
+        case .yellow: L10n.text("亮黄")
+        case .orange: L10n.text("橙色")
+        case .coral: L10n.text("珊瑚红")
+        case .pink: L10n.text("粉色")
+        case .violet: L10n.text("紫色")
+        case .cyan: L10n.text("青蓝")
+        case .mint: L10n.text("薄荷绿")
         }
     }
 }
@@ -80,7 +80,7 @@ enum LyricsColorPreset: String, CaseIterable, Identifiable {
 @MainActor
 enum LyricsFontCatalog {
     static let systemFamily = ""
-    static let systemDisplayName = "系统默认（圆体）"
+    static let systemDisplayName = L10n.text("系统默认（圆体）")
 
     static let availableFamilies: [String] = {
         NSFontManager.shared.availableFontFamilies

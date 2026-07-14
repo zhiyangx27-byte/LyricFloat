@@ -25,10 +25,13 @@
 		200000000000000000000010 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* SettingsView.swift */; };
 		200000000000000000000011 /* OverlayPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000011 /* OverlayPanelController.swift */; };
 		200000000000000000000012 /* LyricsCandidateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000012 /* LyricsCandidateSelectionView.swift */; };
+		200000000000000000000013 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000013 /* L10n.swift */; };
 		210000000000000000000001 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110000000000000000000001 /* AppKit.framework */; };
 		210000000000000000000002 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110000000000000000000002 /* ScriptingBridge.framework */; };
 		210000000000000000000003 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110000000000000000000003 /* ServiceManagement.framework */; };
 		220000000000000000000001 /* LyricFloat.icns in Resources */ = {isa = PBXBuildFile; fileRef = 120000000000000000000003 /* LyricFloat.icns */; };
+		220000000000000000000002 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 130000000000000000000001 /* Localizable.strings */; };
+		220000000000000000000003 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 130000000000000000000002 /* InfoPlist.strings */; };
 		400000000000000000000001 /* LRCParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300000000000000000000001 /* LRCParserTests.swift */; };
 		400000000000000000000002 /* PlaybackPositionInterpolatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300000000000000000000002 /* PlaybackPositionInterpolatorTests.swift */; };
 		400000000000000000000003 /* LyricsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300000000000000000000003 /* LyricsRepositoryTests.swift */; };
@@ -63,12 +66,17 @@
 		100000000000000000000010 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Views/SettingsView.swift; sourceTree = "<group>"; };
 		100000000000000000000011 /* OverlayPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Windowing/OverlayPanelController.swift; sourceTree = "<group>"; };
 		100000000000000000000012 /* LyricsCandidateSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Views/LyricsCandidateSelectionView.swift; sourceTree = "<group>"; };
+		100000000000000000000013 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/LyricFloat/Support/L10n.swift; sourceTree = "<group>"; };
 		110000000000000000000001 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		110000000000000000000002 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		110000000000000000000003 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		120000000000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Resources/Info.plist; sourceTree = "<group>"; };
 		120000000000000000000002 /* LyricFloat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resources/LyricFloat.entitlements; sourceTree = "<group>"; };
 		120000000000000000000003 /* LyricFloat.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Resources/LyricFloat.icns; sourceTree = "<group>"; };
+		120000000000000000000004 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		120000000000000000000005 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Resources/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		120000000000000000000006 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		120000000000000000000007 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Resources/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		300000000000000000000001 /* LRCParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests/LyricFloatTests/LRCParserTests.swift; sourceTree = "<group>"; };
 		300000000000000000000002 /* PlaybackPositionInterpolatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests/LyricFloatTests/PlaybackPositionInterpolatorTests.swift; sourceTree = "<group>"; };
 		300000000000000000000003 /* LyricsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests/LyricFloatTests/LyricsRepositoryTests.swift; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 				100000000000000000000010 /* SettingsView.swift */,
 				100000000000000000000011 /* OverlayPanelController.swift */,
 				100000000000000000000012 /* LyricsCandidateSelectionView.swift */,
+				100000000000000000000013 /* L10n.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -168,6 +177,8 @@
 				120000000000000000000001 /* Info.plist */,
 				120000000000000000000002 /* LyricFloat.entitlements */,
 				120000000000000000000003 /* LyricFloat.icns */,
+				130000000000000000000001 /* Localizable.strings */,
+				130000000000000000000002 /* InfoPlist.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -231,10 +242,11 @@
 			};
 			buildConfigurationList = 700000000000000000000001 /* Build configuration list for PBXProject "LyricFloat" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 				Base,
 			);
 			mainGroup = 000000000000000000000002;
@@ -254,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				220000000000000000000001 /* LyricFloat.icns in Resources */,
+				220000000000000000000002 /* Localizable.strings in Resources */,
+				220000000000000000000003 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +303,7 @@
 				200000000000000000000010 /* SettingsView.swift in Sources */,
 				200000000000000000000011 /* OverlayPanelController.swift in Sources */,
 				200000000000000000000012 /* LyricsCandidateSelectionView.swift in Sources */,
+				200000000000000000000013 /* L10n.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +318,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		130000000000000000000001 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				120000000000000000000004 /* en */,
+				120000000000000000000005 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		130000000000000000000002 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				120000000000000000000006 /* en */,
+				120000000000000000000007 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
 		800000000000000000000002 /* PBXTargetDependency */ = {

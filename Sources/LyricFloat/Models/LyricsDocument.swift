@@ -6,6 +6,16 @@ enum LyricsOrigin: String, Codable, Sendable {
     case cache
     case lrclib
     case appleMusic
+
+    var localizedName: String {
+        switch self {
+        case .localOverride: L10n.text("本地 LRC")
+        case .manualLRCLIB: L10n.text("手动选择")
+        case .cache: L10n.text("本地缓存")
+        case .lrclib: "LRCLIB"
+        case .appleMusic: "Apple Music"
+        }
+    }
 }
 
 struct TimedLyricsLine: Codable, Equatable, Identifiable, Sendable {

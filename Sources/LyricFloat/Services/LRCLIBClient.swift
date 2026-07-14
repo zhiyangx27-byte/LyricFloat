@@ -23,10 +23,10 @@ struct LyricsCandidate: Identifiable, Equatable, Sendable {
 
     var confidenceLabel: String {
         switch score {
-        case 90...: "高"
-        case 68...: "较高"
-        case 45...: "较低"
-        default: "低"
+        case 90...: L10n.text("高")
+        case 68...: L10n.text("较高")
+        case 45...: L10n.text("较低")
+        default: L10n.text("低")
         }
     }
 }
@@ -119,8 +119,8 @@ struct LRCLIBClient: LyricsRemoteClient {
             .map { record in
                 LyricsCandidate(
                     id: candidateID(for: record),
-                    trackName: record.trackName ?? "未知歌名",
-                    artistName: record.artistName ?? "未知歌手",
+                    trackName: record.trackName ?? L10n.text("未知歌名"),
+                    artistName: record.artistName ?? L10n.text("未知歌手"),
                     albumName: record.albumName,
                     duration: record.duration,
                     hasSyncedLyrics: record.syncedLyrics?.isEmpty == false,

@@ -57,13 +57,13 @@ final class AppModel: ObservableObject {
     }
 
     var shortTrackTitle: String {
-        guard let snapshot else { return "等待 Apple Music" }
+        guard let snapshot else { return L10n.text("等待 Apple Music") }
         let title = snapshot.displayTitle
         return title.count <= 34 ? title : String(title.prefix(31)) + "..."
     }
 
     var offsetLabel: String {
-        String(format: "%+.2f 秒", lyricsOffset)
+        L10n.format("%+.2f 秒", lyricsOffset)
     }
 
     func start() {
@@ -141,7 +141,7 @@ final class AppModel: ObservableObject {
         preferences.overlayVisible = true
         overlayWasManuallyHidden = false
         overlayController?.centerOnCurrentDisplay()
-        statusMessage = "歌词窗口已移回当前显示器中央。"
+        statusMessage = L10n.text("歌词窗口已移回当前显示器中央。")
     }
 
     func showLyricsColorPanel(for target: LyricsColorTarget) {
@@ -174,7 +174,7 @@ final class AppModel: ObservableObject {
             lyricsCandidateLoadTask?.cancel()
             lyricsCandidates = []
             isLoadingLyricsCandidates = false
-            lyricsCandidateMessage = "请先在 Apple Music 中播放一首歌曲。"
+            lyricsCandidateMessage = L10n.text("请先在 Apple Music 中播放一首歌曲。")
             return
         }
 
@@ -196,11 +196,11 @@ final class AppModel: ObservableObject {
                 lyricsCandidates = loadedCandidates
                 hasManualLyricsSelection = loadedHasManualSelection
                 lyricsCandidateMessage = loadedCandidates.isEmpty
-                    ? "LRCLIB 没有找到可供选择的歌词版本。"
+                    ? L10n.text("LRCLIB 没有找到可供选择的歌词版本。")
                     : nil
             } catch {
                 guard !Task.isCancelled, self.snapshot?.trackID == snapshot.trackID else { return }
-                lyricsCandidateMessage = "无法连接 LRCLIB，请检查网络后重试。"
+                lyricsCandidateMessage = L10n.text("无法连接 LRCLIB，请检查网络后重试。")
                 AppLog.lyrics.error(
                     "Manual LRCLIB candidate search failed: \(error.localizedDescription, privacy: .public)"
                 )
@@ -223,11 +223,11 @@ final class AppModel: ObservableObject {
                 hasManualLyricsSelection = true
                 await reloadResolvedLyrics(for: snapshot)
                 guard !Task.isCancelled, self.snapshot?.trackID == snapshot.trackID else { return }
-                lyricsCandidateMessage = "已选择“\(candidate.trackName)”的歌词版本。"
-                statusMessage = "已保存当前歌曲的手动歌词版本。"
+                lyricsCandidateMessage = L10n.format("已选择“%@”的歌词版本。", candidate.trackName)
+                statusMessage = L10n.text("已保存当前歌曲的手动歌词版本。")
             } catch {
                 guard !Task.isCancelled, self.snapshot?.trackID == snapshot.trackID else { return }
-                lyricsCandidateMessage = "保存歌词版本失败：\(error.localizedDescription)"
+                lyricsCandidateMessage = L10n.format("保存歌词版本失败：%@", error.localizedDescription)
             }
         }
     }
@@ -245,11 +245,11 @@ final class AppModel: ObservableObject {
                 hasManualLyricsSelection = false
                 await reloadResolvedLyrics(for: snapshot)
                 guard !Task.isCancelled, self.snapshot?.trackID == snapshot.trackID else { return }
-                lyricsCandidateMessage = "已清除手动选择，当前歌曲恢复自动匹配。"
-                statusMessage = "已清除当前歌曲的手动歌词版本。"
+                lyricsCandidateMessage = L10n.text("已清除手动选择，当前歌曲恢复自动匹配。")
+                statusMessage = L10n.text("已清除当前歌曲的手动歌词版本。")
             } catch {
                 guard !Task.isCancelled, self.snapshot?.trackID == snapshot.trackID else { return }
-                lyricsCandidateMessage = "清除手动选择失败：\(error.localizedDescription)"
+                lyricsCandidateMessage = L10n.format("清除手动选择失败：%@", error.localizedDescription)
             }
         }
     }
@@ -267,10 +267,10 @@ final class AppModel: ObservableObject {
                 hasLocalLyricsOverride = false
                 await reloadResolvedLyrics(for: snapshot)
                 guard !Task.isCancelled, self.snapshot?.trackID == snapshot.trackID else { return }
-                statusMessage = "已清除当前歌曲的本地 LRC，恢复其他歌词来源。"
+                statusMessage = L10n.text("已清除当前歌曲的本地 LRC，恢复其他歌词来源。")
             } catch {
                 guard !Task.isCancelled, self.snapshot?.trackID == snapshot.trackID else { return }
-                statusMessage = "清除本地 LRC 失败：\(error.localizedDescription)"
+                statusMessage = L10n.format("清除本地 LRC 失败：%@", error.localizedDescription)
             }
         }
     }
@@ -278,7 +278,7 @@ final class AppModel: ObservableObject {
     private func refreshGlobalHotKey() {
         guard preferences.isHotKeyValid else {
             globalHotKeyController.unregisterHotKey()
-            hotKeyRegistrationMessage = "请至少选择一个修饰键"
+            hotKeyRegistrationMessage = L10n.text("请至少选择一个修饰键")
             return
         }
         let registered = globalHotKeyController.register(
@@ -288,8 +288,8 @@ final class AppModel: ObservableObject {
             self?.toggleOverlay()
         }
         hotKeyRegistrationMessage = registered
-            ? "已启用 \(preferences.hotKeyShortcutLabel)"
-            : "注册失败，此组合可能已被其他应用占用"
+            ? L10n.format("已启用 %@", preferences.hotKeyShortcutLabel)
+            : L10n.text("注册失败，此组合可能已被其他应用占用")
     }
 
     func playPause() {
@@ -327,12 +327,12 @@ final class AppModel: ObservableObject {
 
     func importLRC() {
         guard let snapshot else {
-            statusMessage = "请先在 Apple Music 中播放一首歌曲。"
+            statusMessage = L10n.text("请先在 Apple Music 中播放一首歌曲。")
             return
         }
 
         let panel = NSOpenPanel()
-        panel.title = "为 \(snapshot.title) 导入同步歌词"
+        panel.title = L10n.format("为 %@ 导入同步歌词", snapshot.title)
         panel.allowedContentTypes = [.plainText]
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
@@ -350,11 +350,11 @@ final class AppModel: ObservableObject {
                 lyrics = document
                 hasLocalLyricsOverride = true
                 isLoadingLyrics = false
-                statusMessage = "已导入同步歌词。"
+                statusMessage = L10n.text("已导入同步歌词。")
                 AppLog.lyrics.info("Imported local LRC")
             } catch {
                 guard !Task.isCancelled, self.snapshot?.trackID == snapshot.trackID else { return }
-                statusMessage = "导入失败：\(error.localizedDescription)"
+                statusMessage = L10n.format("导入失败：%@", error.localizedDescription)
             }
         }
     }
@@ -362,16 +362,16 @@ final class AppModel: ObservableObject {
     func clearLyricsCache() {
         Task {
             await lyricsRepository.clearCache()
-            statusMessage = "在线歌词缓存已清除；本地导入歌词保留。"
+            statusMessage = L10n.text("在线歌词缓存已清除；本地导入歌词保留。")
         }
     }
 
     func requestAutomationAccess() {
         do {
             _ = try mediaSource.snapshot()
-            statusMessage = "已成功读取 Apple Music。"
+            statusMessage = L10n.text("已成功读取 Apple Music。")
         } catch {
-            statusMessage = "Apple Music 访问失败：\(error.localizedDescription)"
+            statusMessage = L10n.format("Apple Music 访问失败：%@", error.localizedDescription)
         }
     }
 
@@ -379,10 +379,12 @@ final class AppModel: ObservableObject {
         do {
             try LaunchAtLoginController.setEnabled(enabled)
             launchAtLogin = enabled
-            statusMessage = enabled ? "已设置登录时启动。" : "已关闭登录时启动。"
+            statusMessage = enabled
+                ? L10n.text("已设置登录时启动。")
+                : L10n.text("已关闭登录时启动。")
         } catch {
             launchAtLogin = LaunchAtLoginController.isEnabled
-            statusMessage = "登录启动设置失败：\(error.localizedDescription)"
+            statusMessage = L10n.format("登录启动设置失败：%@", error.localizedDescription)
         }
     }
 
@@ -432,7 +434,7 @@ final class AppModel: ObservableObject {
             }
             loadLyrics(for: newSnapshot)
         } catch {
-            statusMessage = "Apple Music 读取失败：\(error.localizedDescription)"
+            statusMessage = L10n.format("Apple Music 读取失败：%@", error.localizedDescription)
             AppLog.playback.error("Apple Music read failed: \(error.localizedDescription, privacy: .public)")
         }
     }

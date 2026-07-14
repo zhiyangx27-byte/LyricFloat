@@ -17,9 +17,9 @@ enum MediaSourceError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .unavailable:
-            "Apple Music 当前不可用。"
+            L10n.text("Apple Music 当前不可用。")
         case .missingTrackMetadata:
-            "无法读取当前歌曲信息。"
+            L10n.text("无法读取当前歌曲信息。")
         }
     }
 }

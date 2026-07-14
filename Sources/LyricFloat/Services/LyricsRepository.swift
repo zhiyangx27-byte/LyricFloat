@@ -6,7 +6,7 @@ enum LyricsRepositoryError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidLRC:
-            "文件中没有识别到 LRC 时间戳，未替换当前歌词。"
+            L10n.text("文件中没有识别到 LRC 时间戳，未替换当前歌词。")
         }
     }
 }

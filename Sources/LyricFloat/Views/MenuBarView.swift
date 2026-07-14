@@ -11,7 +11,7 @@ struct MenuBarView: View {
                 Text(model.snapshot?.title ?? "LyricFloat")
                     .font(.headline)
                     .lineLimit(1)
-                Text(model.snapshot?.artist ?? "等待 Apple Music")
+                Text(model.snapshot?.artist ?? L10n.text("等待 Apple Music"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
@@ -37,18 +37,24 @@ struct MenuBarView: View {
             Button(action: model.toggleOverlay) {
                 HStack {
                     Label(
-                        model.preferences.overlayVisible ? "隐藏悬浮歌词" : "显示悬浮歌词",
+                        model.preferences.overlayVisible
+                            ? L10n.text("隐藏悬浮歌词")
+                            : L10n.text("显示悬浮歌词"),
                         systemImage: model.preferences.overlayVisible ? "eye.slash" : "eye"
                     )
                     Spacer()
-                    Text(model.preferences.isHotKeyValid ? model.preferences.hotKeyShortcutLabel : "未设置")
+                    Text(model.preferences.isHotKeyValid
+                        ? model.preferences.hotKeyShortcutLabel
+                        : L10n.text("未设置"))
                         .foregroundStyle(.secondary)
                 }
             }
 
             Button(action: model.toggleLock) {
                 Label(
-                    model.preferences.locked ? "解锁并移动歌词" : "锁定位置并穿透点击",
+                    model.preferences.locked
+                        ? L10n.text("解锁并移动歌词")
+                        : L10n.text("锁定位置并穿透点击"),
                     systemImage: model.preferences.locked ? "lock.open" : "lock"
                 )
                 .frame(maxWidth: .infinity, alignment: .leading)

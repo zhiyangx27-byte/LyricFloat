@@ -19,7 +19,10 @@ struct LyricsCandidateSelectionView: View {
                 ContentUnavailableView(
                     "没有歌词候选",
                     systemImage: "text.magnifyingglass",
-                    description: Text(model.lyricsCandidateMessage ?? "LRCLIB 没有返回可选择的版本。")
+                    description: Text(
+                        model.lyricsCandidateMessage
+                            ?? L10n.text("LRCLIB 没有返回可选择的版本。")
+                    )
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
@@ -66,7 +69,7 @@ struct LyricsCandidateSelectionView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text("为当前歌曲选择歌词版本")
                 .font(.title2.weight(.semibold))
-            Text(model.snapshot?.title ?? "没有正在播放的歌曲")
+            Text(model.snapshot?.title ?? L10n.text("没有正在播放的歌曲"))
                 .font(.headline)
             if let snapshot = model.snapshot {
                 Text([snapshot.artist, snapshot.album].filter { !$0.isEmpty }.joined(separator: " · "))
@@ -100,7 +103,9 @@ private struct LyricsCandidateRow: View {
 
             VStack(alignment: .trailing, spacing: 6) {
                 Label(
-                    candidate.hasSyncedLyrics ? "同步歌词" : "普通歌词",
+                    candidate.hasSyncedLyrics
+                        ? L10n.text("同步歌词")
+                        : L10n.text("普通歌词"),
                     systemImage: candidate.hasSyncedLyrics ? "clock.badge.checkmark" : "text.alignleft"
                 )
                 .font(.caption)
@@ -112,7 +117,11 @@ private struct LyricsCandidateRow: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Text("匹配 \(Int(candidate.score.rounded())) · 可信度\(candidate.confidenceLabel)")
+                Text(L10n.format(
+                    "匹配 %d · 可信度%@",
+                    Int(candidate.score.rounded()),
+                    candidate.confidenceLabel
+                ))
                     .font(.caption.weight(.medium))
                     .foregroundStyle(confidenceColor)
             }

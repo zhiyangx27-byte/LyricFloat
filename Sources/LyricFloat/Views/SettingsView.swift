@@ -54,7 +54,7 @@ struct SettingsView: View {
                 get: { preferences.fontSize },
                 set: { preferences.fontSize = $0 }
             ), in: 16...64) {
-                Text("歌词字号：\(Int(preferences.fontSize))")
+                Text(L10n.format("歌词字号：%d", Int(preferences.fontSize)))
             } minimumValueLabel: {
                 Text("16")
             } maximumValueLabel: {
@@ -180,7 +180,7 @@ struct SettingsView: View {
 
     private var lyricsTab: some View {
         Form {
-            LabeledContent("当前歌曲", value: model.snapshot?.displayTitle ?? "无")
+            LabeledContent("当前歌曲", value: model.snapshot?.displayTitle ?? L10n.text("无"))
             LabeledContent("歌词状态", value: lyricsStatus)
             LabeledContent("同步偏移", value: model.offsetLabel)
 
@@ -219,10 +219,12 @@ struct SettingsView: View {
     }
 
     private var lyricsStatus: String {
-        guard let lyrics = model.lyrics else { return "未找到" }
-        if lyrics.instrumental { return "纯音乐" }
-        if lyrics.isSynced { return "同步歌词 · \(lyrics.origin.rawValue)" }
-        return "普通歌词 · \(lyrics.origin.rawValue)"
+        guard let lyrics = model.lyrics else { return L10n.text("未找到") }
+        if lyrics.instrumental { return L10n.text("纯音乐") }
+        if lyrics.isSynced {
+            return L10n.format("同步歌词 · %@", lyrics.origin.localizedName)
+        }
+        return L10n.format("普通歌词 · %@", lyrics.origin.localizedName)
     }
 }
 

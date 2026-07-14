@@ -401,7 +401,9 @@ private struct OverlayControlsView: View {
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .help(model.preferences.locked ? "解除固定歌词" : "固定歌词并穿透点击")
+        .help(model.preferences.locked
+            ? L10n.text("解除固定歌词")
+            : L10n.text("固定歌词并穿透点击"))
         .allowsWindowActivationEvents(true)
     }
 
